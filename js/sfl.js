@@ -1,14 +1,38 @@
-function treesCountChange(treesInput) {
-	var treesCount = parseInt($(treesInput).val(), 10);
-	var price = getPrice(treesCount);
-	$('#bags_price').html(price + " euros");
-	$('#bags_count').html(getBagsCount(price) + " sachet(s)");
-}
+/**
+ *
+ * Seeds For Life Javascript library
+ *
+ * @author edebernis
+ * @version 1.0
+ *
+ **/
 
-function getPrice(plantedTreeCount) {
-	return Math.floor(plantedTreeCount * (1 + (2/(Math.log(plantedTreeCount+1)))));
-}
+/*
+ * Trigger popover objects.
+ * Set possibility to add HTML code
+ * in popover content.
+ *
+ */
+$('.sfl-popover').popover({
+	html: true
+});
 
-function getBagsCount(price) {
-	return Math.floor(price/5);
-}
+
+/*
+ * Provide a slide effect for 
+ * dropdown elements in navbar.
+ *
+ */
+$('.nav .dropdown').hover(function() {
+	$(this).find('.dropdown-menu').first().slideToggle(300);
+});
+
+
+/*
+ * Start the slideshow and
+ * set the animation period.
+ *
+ */
+$('.carousel').carousel({
+  	interval: 6000
+});
